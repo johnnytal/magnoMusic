@@ -121,8 +121,8 @@ gameMain.prototype = {
 	        } catch(e){}
         }, 1000); 
 
-        /*watchReading();
-        initAd();*/
+        watchReading();
+        initAd();
     }, 
     update: function(){
     	if (video_playing){
