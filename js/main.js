@@ -121,8 +121,8 @@ gameMain.prototype = {
 	        } catch(e){}
         }, 1000); 
 
-        watchReading();
-        initAd();
+        /*watchReading();
+        initAd();*/
     }, 
     update: function(){
     	if (video_playing){
@@ -438,7 +438,7 @@ function buttons_labels(){
     info_btn.events.onInputDown.add(function(){
     	/*cordova.plugins.magnetometer.stop();
     	killOsc();
-		game.state.start("Info");
+		game.state.start("Info");*/
     }, this);
 
     sound_btn = game.add.sprite(info_btn.x, calibrate_btn_1320.y, 'sound_btn');
