@@ -121,8 +121,8 @@ gameMain.prototype = {
 	        } catch(e){}
         }, 1000); 
 
-       /* watchReading();
-        initAd();*/
+        watchReading();
+        /*initAd();*/
     }, 
     update: function(){
     	if (video_playing){
@@ -153,7 +153,7 @@ function watchReadingGame(){
 
 function getReading(){
     timer = setInterval(function(){
-        window.plugin.lightsensor.getReading(function success(reading){
+        cordova.plugins.magnetometer.getReading(function success(reading){
             readLight(reading);
         });
     }, 60000 / tempos[tempo]);
