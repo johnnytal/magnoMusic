@@ -212,7 +212,7 @@ function readLight(reading){
            addedText = "(It's too dark here)"; 
         }
         
-        debug_label.text = luminosity + ' lux * ' + Math.round(factor * 100) / 100 + ' = ' + frequency_text_correct + '\n' + addedText;
+        debug_label.text = luminosity + ' μT * ' + Math.round(factor * 100) / 100 + ' = ' + frequency_text_correct + '\n' + addedText;
         debug_label.x = game.world.centerX - debug_label.width / 2;
         
         var glide = T("param", {value: last_frequency});
@@ -434,9 +434,9 @@ function buttons_labels(){
 
    info_btn = game.add.sprite(700, 50, 'info_btn');
    info_btn.alpha = 0;
-    info_btn.inputEnabled = true;
+    //info_btn.inputEnabled = true;
     info_btn.events.onInputDown.add(function(){
-    	cordova.plugins.magnetometer.stop();
+    	/*cordova.plugins.magnetometer.stop();
     	killOsc();
 		game.state.start("Info");
     }, this);
