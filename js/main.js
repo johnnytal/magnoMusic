@@ -84,7 +84,7 @@ var gameMain = function(game){
 
 gameMain.prototype = {
     create: function(){
-    	debug_label = game.add.text(100, 50, "No light sensor activity.\nIt might be too dark.", 
+    	debug_label = game.add.text(100, 50, "No sensor activity", 
 		{font: '36px ' + font, fill: 'white', fontWeight: 'bold', align: 'center'});
     	debug_label.x = game.world.centerX - debug_label.width / 2;
 
@@ -122,7 +122,7 @@ gameMain.prototype = {
         }, 1000); 
 
         watchReading();
-        /*initAd();*/
+        initAd();
     }, 
     update: function(){
     	if (video_playing){
@@ -371,7 +371,7 @@ function buttons_labels(){
     Label_1320.x = calibrate_btn_1320.x + 5;
     Label_1320.y = calibrate_btn_1320.y + 5;
 
-    Label_calibrate = game.add.text(Label_1320.x, Label_1320.y - Label_1320.height * 1.5, 'Calibrate to light level:', {
+    Label_calibrate = game.add.text(Label_1320.x, Label_1320.y - Label_1320.height * 1.5, 'Calibrate magnetism:', {
         font: '28px ' + font, fill: 'white', fontWeight: 'normal', align: 'center', stroke:'grey', strokeThickness: 1
     });
     
@@ -432,7 +432,8 @@ function buttons_labels(){
     band_btn.inputEnabled = true;
     band_btn.events.onInputDown.add(playMusic);
 
-    info_btn = game.add.sprite(700, 50, 'info_btn');
+   info_btn = game.add.sprite(700, 50, 'info_btn');
+   info_btn.alpha = 0;
     info_btn.inputEnabled = true;
     info_btn.events.onInputDown.add(function(){
     	cordova.plugins.magnetometer.stop();
@@ -591,7 +592,7 @@ function show_video(){
             font: '40px ' + font, fill: 'white', fontWeight: 'bold', align: 'center'
         });
        
-        insttext2 = game.add.text(30, 150, 'Turn on the lights\nto go faster\nand earn more points\n\nUse the arrows to dodge asteroids', {
+        insttext2 = game.add.text(30, 150, 'Bring magnet closer\nto go faster\nand earn more points\n\nUse the arrows to dodge asteroids', {
             font: '40px ' + font, fill: 'white', fontWeight: 'bold', align: 'center'
         });
         
@@ -710,8 +711,8 @@ function initSpaceGame(){
 
 function initAd(){
     admobid = {
-        interstitial: 'ca-app-pub-9795366520625065/2870402631',
-        banner: 'ca-app-pub-9795366520625065/8959215838'
+        interstitial: 'ca-app-pub-9795366520625065/9228363114',
+        banner: 'ca-app-pub-9795366520625065/6375803218'
     };
     
  	if(AdMob) AdMob.createBanner({

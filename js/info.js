@@ -3,9 +3,8 @@ var info = function(game){};
 info.prototype = {
     create: function(){  
         game.add.text(35, 75,
-	        "1. Locate the light sensor on your device.\n\n" +
-	        "2. Direct a lamp/flashlight closer and further from the light sensor.\n" +
-	        "Working with lamp dimmer is highly recommended.\n\n" +
+	        "1. Locate the magnet sensor on your device.\n\n" +
+	        "2. Direct a magnet closer and further from the magnet sensor.\n" +
 	        "3. Calibrate to a higher frequency in a darker environment,\nand lower frequency in a lit environment.\n\n" +
 	        "4. Be considerate of dogs in highly lit environments.\n\n" +
 	        "5. You can get more information in the store listing." +
